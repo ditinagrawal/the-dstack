@@ -41,7 +41,7 @@ const Posts = () => {
   };
   if (isLoadingPosts) return <Spinner size="lg" />;
   return (
-    <div className="mx-auto max-w-3xl py-16">
+    <div className="mx-auto max-w-3xl px-4 py-16">
       <Card className="p-6">
         <CardHeader>
           <CardTitle className="text-xl font-bold">Create a post</CardTitle>
@@ -75,10 +75,10 @@ const Posts = () => {
               {posts?.map((post) => (
                 <li
                   key={post.id}
-                  className="flex items-center justify-between rounded-md bg-gray-100 px-4 py-2"
+                  className="flex items-center justify-between rounded-md bg-gray-100 px-4 py-2 dark:bg-neutral-800"
                 >
                   <div>{post.title}</div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-gray-500 dark:text-neutral-400">
                     <span className="text-xs">created on </span>
                     {new Date(post.createdAt).toLocaleDateString()}
                   </div>

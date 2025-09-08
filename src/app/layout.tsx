@@ -3,6 +3,7 @@ import { Libre_Baskerville } from "next/font/google";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { TrpcProvider } from "@/components/providers/trpc-provider";
+import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -38,6 +39,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster position="top-center" />
           </ThemeProvider>
         </TrpcProvider>
       </body>
