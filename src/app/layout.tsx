@@ -1,7 +1,9 @@
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Libre_Baskerville } from "next/font/google";
+
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { TrpcProvider } from "@/components/providers/trpc-provider";
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const libreBaskerville = Libre_Baskerville({
@@ -28,14 +30,16 @@ export default function RootLayout({
           "min-h-screen bg-[url('/noise.png')] antialiased",
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <TrpcProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </TrpcProvider>
       </body>
     </html>
   );
